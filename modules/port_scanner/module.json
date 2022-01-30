@@ -1,0 +1,14 @@
+{
+    "author": "billalxcode",
+    "version": "1.1",
+    "package": "portscan",
+    "repostory": "",
+    "script": {
+        "main": "apps.py"
+    },
+    "contributors": [
+    ],
+    "deps": [
+        "pathlib"
+    ]
+}

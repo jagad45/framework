@@ -1,0 +1,15 @@
+{
+    "author": "Jagad Team",
+    "urls": {
+        "git": "https://github.com/jagad7/jagad-framework"
+    },
+    "deps": [
+        "requests",
+        "paramiko",
+        "pathlib",
+        "idna",
+        "bcrypt",
+        "pycrypto",
+        "colorama"
+    ]
+}

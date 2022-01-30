@@ -1,0 +1,14 @@
+{
+    "author": "billalxcode",
+    "version": "1.1",
+    "package": "hashcracker",
+    "repostory": "",
+    "script": {
+        "main": "apps.py"
+    },
+    "contributors": [
+    ],
+    "deps": [
+        "pathlib"
+    ]
+}

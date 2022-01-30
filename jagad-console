@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+import sys
+import time
+from jagad.terminal.colors import Fore
+from jagad.terminal.shell import Shell
+from jagad.terminal.console import print_warning
+from threading import Thread, Event
+
+symbols = "|/-\|"
+index = 0
+
+def loading():
+    try:
+        global index, symbols
+        if index >= len(symbols):
+            index = 0
+        symbol = symbols[index]
+        print(f"{Fore.WHITE}[{Fore.GREEN}{symbol}{Fore.WHITE}] Initialize app...", end="\r")
+        index += 1
+        time.sleep(0.1)
+    except: pass
+    
+def main():
+    shell = Shell()
+    th = Thread(target=shell.initalize)
+    th.setDaemon(True)
+    th.start()
+    while th.is_alive():
+        loading()
+    try:
+        th.join()
+        shell.run()
+    except KeyboardInterrupt:
+        print_warning(f"User quit...")
+        sys.exit()
+
+if __name__ == "__main__":
+    main()

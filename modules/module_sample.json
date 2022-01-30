@@ -1,0 +1,17 @@
+{
+    "author": "Your name",
+    "version": "Version Module",
+    "package": "Package Name",
+    "repostory": "Repo URL (recommended: github)",
+    "script": "Main script (recommended: apps.py)",
+    "contributors": [
+        "Name1",
+        "Name2",
+        "Name3"
+    ],
+    "deps": [
+        "requests",
+        "pathlib",
+        "pycrypto"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "login": [
+        {
+            "USER": "billalxcode",
+            "PASS": "billal#1412",
+            "REQU": true,
+            "HASH": {
+                "md5": "...",
+                "sha1": "...",
+                "bcrypt": "..."
+            }
+        }
+    ],
+    "executable": {
+        "python": {
+            "path": "/usr/bin/python3.",
+            "version": "3.8.10"
+        }
+    }
+}
