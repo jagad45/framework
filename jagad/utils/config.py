@@ -1,5 +1,6 @@
 import json
 import os
+import requests
 from jagad.utils.constants import CONFIG_PATH
 from jagad.terminal.console import print_warning
 from jagad.exceptions import ConfigError
@@ -31,6 +32,7 @@ class Selector:
 class Config:
     def __init__(self) -> None:
         self.CONFIG_PATH = CONFIG_PATH
+        self.CONFIG_URL = "https://raw.githubusercontent.com/jagad45/framework/main/config.json"
         self.data = {}
 
     def find_path(self):
@@ -39,7 +41,12 @@ class Config:
             if os.path.isfile(path):
                 result.append(path)
         if len(result) == 0:
-            raise ConfigError("No config found!")
+            response = requests.get(self.CONFIG_URL)
+            if response.status_code == 200:
+                with open("config.json", "w") as File:
+                    File.write(response.text)
+                    File.close()
+            return self.find_path()
         else:
             return result
 
